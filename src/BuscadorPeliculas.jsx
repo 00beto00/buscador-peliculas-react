@@ -22,7 +22,7 @@ export const BuscadorPeliculas = () => {
         try {
             const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
             const data = await response.json()
-            setPeliculas(data)
+            setPeliculas(data.results)
         } catch (error) {
 
             console.error('Ha ocurrido un error', error)
